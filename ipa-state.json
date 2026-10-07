@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "source": {
+    "manifest_url": "https://alynsampmobile.pro/api/resa/ios/manifest",
+    "ipa_url": "https://alynsampmobile.pro/api/resa/ios/ipa"
+  },
+  "app": {
+    "title": "Alyn ReSA Multiplayer",
+    "bundle_identifier": "com.alyn.resamp.launcher"
+  },
+  "current": null,
+  "pending": {
+    "schema_version": 1,
+    "title": "Alyn ReSA Multiplayer",
+    "manifest_title": "ReSA Multiplayer",
+    "bundle_identifier": "com.alyn.resamp.launcher",
+    "ipa_bundle_identifier": "com.alyn.resamp.launcher",
+    "bundle_version": "1.0.2",
+    "marketing_version": "1.0.2",
+    "build_version": "102",
+    "executable": "ReSALauncher",
+    "info_plist_path": "Payload/ReSALauncher.app/Info.plist",
+    "manifest_url": "https://alynsampmobile.pro/api/resa/ios/manifest",
+    "ipa_url": "https://alynsampmobile.pro/api/resa/ios/ipa",
+    "manifest_sha256": "2e5026438aa96ef248373c9c115284e5d89460659bd05626ebf252ddf458bbcf",
+    "source_sha256": "24a7ed86c50c9466170fc5cf8d8974b8c42c142f84578bcd7503a32f9c895563",
+    "stripped_sha256": "cfecb1f90266c4ae4a1a09322df201dabdf33545dae56881524d5bc99351316f",
+    "release_tag": "v1.0.2",
+    "release_revision": 1,
+    "release_name": "Alyn ReSA Multiplayer 1.0.2 (102)",
+    "asset_name": "Alyn_ReSA_Multiplayer_v1.0.2.ipa",
+    "asset_path": "build/ipa/dist/Alyn_ReSA_Multiplayer_v1.0.2.ipa",
+    "checksum_path": "build/ipa/dist/Alyn_ReSA_Multiplayer_v1.0.2.ipa.sha256",
+    "strip": {
+      "macho_files_modified": 6,
+      "macho_signatures_removed": 6,
+      "codesignature_entries_removed": 12
+    },
+    "prepared_at": "2026-10-07T05:38:38Z",
+    "release_notes": "## Alyn ReSA Multiplayer 1.0.2 (102)\n\nBundle ID: `com.alyn.resamp.launcher`\n\nManifest version: `1.0.2`\n\nRelease tag: `v1.0.2`\n\nSource manifest: `https://alynsampmobile.pro/api/resa/ios/manifest`\n\nSource IPA: `https://alynsampmobile.pro/api/resa/ios/ipa`\n\nSource IPA SHA-256: `24a7ed86c50c9466170fc5cf8d8974b8c42c142f84578bcd7503a32f9c895563`\n\nStripped IPA SHA-256: `cfecb1f90266c4ae4a1a09322df201dabdf33545dae56881524d5bc99351316f`\n\nMach-O signatures removed: `6`\n\n`_CodeSignature` archive entries removed: `12`\n",
+    "status": "pending"
+  },
+  "history": []
+}
