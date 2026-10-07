@@ -81,4 +81,4 @@ jobs:
         run: |
           set -euo pipefail
 
-          python3 scripts/ipa_release.py publish
+          python3 ipa_release.py publish
