@@ -1,0 +1,84 @@
+name: Update ReSA IPA
+
+on:
+  schedule:
+    # Check every 6 hours.
+    - cron: '17 */6 * * *'
+
+  workflow_dispatch:
+    inputs:
+      force_release:
+        description: 'Publish even when the source IPA SHA-256 is unchanged'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resa-ipa-release
+  cancel-in-progress: false
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      - name: Prepare latest IPA
+        id: prepare
+        env:
+          IPA_MANIFEST_URL: https://alynsampmobile.pro/api/resa/ios/manifest
+        run: |
+          set -euo pipefail
+
+          args=()
+
+          if [[ "${{ inputs.force_release }}" == "true" ]]; then
+            args+=(--force-release)
+          fi
+
+          python3 ipa_release.py prepare "${args[@]}"
+
+      - name: Commit pending release state
+        if: steps.prepare.outputs.should_release == 'true'
+        env:
+          RELEASE_TAG: ${{ steps.prepare.outputs.release_tag }}
+        run: |
+          set -euo pipefail
+
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+
+          git add ipa-state.json
+
+          if git diff --cached --quiet; then
+            echo 'No state changes to commit.'
+            exit 0
+          fi
+
+          git commit -m "chore(ipa): stage ${RELEASE_TAG} release"
+
+          git push origin "HEAD:${GITHUB_REF_NAME}"
+
+      - name: Publish GitHub release and finalize state
+        if: steps.prepare.outputs.should_release == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+
+          python3 scripts/ipa_release.py publish
