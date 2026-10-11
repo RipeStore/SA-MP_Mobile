@@ -40,7 +40,37 @@
     "status": "released",
     "released_at": "2026-10-07T05:40:29Z"
   },
-  "pending": null,
+  "pending": {
+    "schema_version": 1,
+    "title": "Alyn ReSA Multiplayer",
+    "manifest_title": "ReSA Multiplayer",
+    "bundle_identifier": "com.alyn.resamp.launcher",
+    "ipa_bundle_identifier": "com.alyn.resamp.launcher",
+    "bundle_version": "1.0.2",
+    "marketing_version": "1.0.2",
+    "build_version": "102",
+    "executable": "ReSALauncher",
+    "info_plist_path": "Payload/ReSALauncher.app/Info.plist",
+    "manifest_url": "https://alynsampmobile.pro/api/resa/ios/manifest",
+    "ipa_url": "https://alynsampmobile.pro/api/resa/ios/ipa",
+    "manifest_sha256": "2e5026438aa96ef248373c9c115284e5d89460659bd05626ebf252ddf458bbcf",
+    "source_sha256": "f1703eba6ed12309a5958687721ed50cd68fb43c669e98364a380d51851a1986",
+    "stripped_sha256": "eb8bc72c5d63e1009dfad455cc946d6c23c48598598239e145b5b572e8b91a9f",
+    "release_tag": "v1.0.2-r2",
+    "release_revision": 2,
+    "release_name": "Alyn ReSA Multiplayer 1.0.2 (102)",
+    "asset_name": "Alyn_ReSA_Multiplayer_v1.0.2-r2.ipa",
+    "asset_path": "build/ipa/dist/Alyn_ReSA_Multiplayer_v1.0.2-r2.ipa",
+    "checksum_path": "build/ipa/dist/Alyn_ReSA_Multiplayer_v1.0.2-r2.ipa.sha256",
+    "strip": {
+      "macho_files_modified": 6,
+      "macho_signatures_removed": 6,
+      "codesignature_entries_removed": 12
+    },
+    "prepared_at": "2026-10-11T05:45:17Z",
+    "release_notes": "## Alyn ReSA Multiplayer 1.0.2 (102)\n\nBundle ID: `com.alyn.resamp.launcher`\n\nManifest version: `1.0.2`\n\nRelease tag: `v1.0.2-r2`\n\nSource manifest: `https://alynsampmobile.pro/api/resa/ios/manifest`\n\nSource IPA: `https://alynsampmobile.pro/api/resa/ios/ipa`\n\nSource IPA SHA-256: `f1703eba6ed12309a5958687721ed50cd68fb43c669e98364a380d51851a1986`\n\nStripped IPA SHA-256: `eb8bc72c5d63e1009dfad455cc946d6c23c48598598239e145b5b572e8b91a9f`\n\nMach-O signatures removed: `6`\n\n`_CodeSignature` archive entries removed: `12`\n",
+    "status": "pending"
+  },
   "history": [
     {
       "schema_version": 1,
